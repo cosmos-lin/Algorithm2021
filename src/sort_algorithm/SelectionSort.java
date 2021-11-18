@@ -13,7 +13,7 @@ public class SelectionSort {
 
         // 0 ~ N - 1 找到最小值，与 0 位置上数交换
         // 1 ~ N - 1 找到最小值，与 1 位置上数交换
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < arr.length; j++) { // i ~ N-1上找到最小值的下标
                 minIndex = arr[minIndex] < arr[j] ? minIndex : j;
