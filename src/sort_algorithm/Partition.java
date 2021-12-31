@@ -2,8 +2,6 @@ package sort_algorithm;
 
 import java.util.Arrays;
 
-import xor.Swap;
-
 /**
  * arr[L..R]上，以arr[R]位置的数做划分值arr[i] <= arr[R] 在左arr[i] > arr[R] 在右
  */
