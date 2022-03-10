@@ -5,7 +5,9 @@ public class CountOfRangeSum {
     
     public static int countRangeSum(int[] nums, int lower, int upper) {
         // 参数判断
-        if (nums == null || nums.length == 0) return 0;
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
 
         // 求nums 前缀和
         long[] sum = new long[nums.length];
@@ -29,12 +31,12 @@ public class CountOfRangeSum {
         // sum不只1个数时候
         // 中点
         int M = L + ((R - L) >> 1);
-        // 返回左右两边和meger结果
-        return process(sum, L, M, lower, upper) + process(sum, M+1, R, lower, upper) + meger(sum, L, M, R, lower, upper);
+        // 返回左右两边和merge结果
+        return process(sum, L, M, lower, upper) + process(sum, M+1, R, lower, upper) + merge(sum, L, M, R, lower, upper);
 
     }
 
-    public static int meger(long[] sum, int L, int M, int R, int lower, int upper) {
+    public static int merge(long[] sum, int L, int M, int R, int lower, int upper) {
 
         int ans = 0;
         // 定义窗口起始大小
@@ -59,7 +61,7 @@ public class CountOfRangeSum {
             ans += windowR - windowL;
         }
 
-        // meger排序
+        // merge排序
         long[] help = new long[R - L + 1];
         int indexHelp = 0;
         int indexL = L;
@@ -67,7 +69,6 @@ public class CountOfRangeSum {
         while (indexL <= M && indexR <= R) {
             help[indexHelp++] = sum[indexL] <= sum[indexR] ? sum[indexL++] : sum[indexR++];
         }
-
         // indexL 或者 indexR 超出限制
         while (indexL <= M) {
             help[indexHelp++] = sum[indexL++];
