@@ -10,10 +10,14 @@ class Partition {
 
     public static int partition(int[] arr, int L, int R) {
         // 1.参数判断
-        if (arr == null || arr.length == 0) return -1;
+        if (arr == null || arr.length == 0) {
+            return -1;
+        }
 
         // 2. 只有一个数，直接return
-        if (L == R) return arr[L];
+        if (L == R) {
+            return arr[L];
+        }
 
         // 3.不只一个数
         int lowerEqual = L - 1; // 划分界线起始位置

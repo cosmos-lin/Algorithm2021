@@ -22,8 +22,8 @@ public class QuickSort2 {
 
         // 获取荷兰国旗边界
         int[] bound = netherlands(arr, L, R);
-        process(arr, L, bound[0]);
-        process(arr, bound[1], R);
+        process(arr, L, bound[0] - 1);
+        process(arr, bound[1] + 1, R);
     }
 
     public static int[] netherlands(int[] arr, int L, int R) {

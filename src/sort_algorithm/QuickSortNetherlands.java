@@ -10,10 +10,14 @@ public class QuickSortNetherlands {
     
     public static int[] netherlandsFlag(int[] arr, int L, int R) {
         // 参数判断
-        if (arr == null || arr.length == 0) return new int[]{-1, -1};
+        if (arr == null || arr.length == 0) {
+            return new int[]{-1, -1};
+        }
 
         //arr只有一个数
-        if (L==R) return new int[]{L, R};
+        if (L==R) {
+            return new int[]{L, R};
+        }
 
         // arr不只一个数
         int index = L;
