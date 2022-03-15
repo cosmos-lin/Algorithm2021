@@ -41,7 +41,7 @@ public class QuickSortNetherlands {
 
         // 交换>arr[R] 边界arr[upperBoundary] 与arr[R] 位置
         swap(arr, R, upperBoundary);
-        return new int[]{lowerBoundary, upperBoundary+1};
+        return new int[]{lowerBoundary+1, upperBoundary};
     }
 
     // 交换两个数

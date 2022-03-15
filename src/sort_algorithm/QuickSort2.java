@@ -1,6 +1,7 @@
 package sort_algorithm;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * 快排2.0版本
@@ -10,7 +11,9 @@ public class QuickSort2 {
     
     public static void quickSort(int[] arr) {
         // 参数判断
-        if (arr == null || arr.length < 2) return;
+        if (arr == null || arr.length < 2) {
+            return;
+        }
 
         process(arr, 0, arr.length-1);
     }
@@ -18,7 +21,9 @@ public class QuickSort2 {
     public static void process(int[] arr, int L, int R) {
 
         // base case
-        if (L >= R) return;
+        if (L >= R) {
+            return;
+        }
 
         // 获取荷兰国旗边界
         int[] bound = netherlands(arr, L, R);
@@ -52,7 +57,7 @@ public class QuickSort2 {
 
         // 交换 arr[R] 与 arr[upperEqual]
         swap(arr, R, upperEqual);
-        return new int[]{lowerEqual, upperEqual};
+        return new int[]{lowerEqual+1, upperEqual};
     }
 
    // 交换两个数
@@ -105,8 +110,8 @@ public class QuickSort2 {
     }
 
     public static void main(String[] args) {
-        int maxSize = 100;
-        int maxValue = 100;
+        int maxSize = 10;
+        int maxValue = 10;
         int testTimes = 1000000;
         boolean success = true;
         for (int i = 0; i < testTimes; i++) {
