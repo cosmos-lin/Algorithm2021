@@ -11,14 +11,19 @@ public class HeapSort {
             return;
         }
 
-        int heapSize = 0;
-
         // 步骤1：遍历arr；在arr上形成大根堆结构
-        for (int i = 0; i < arr.length; i++) {
-            heapInsert(arr, heapSize++);
+        // O(N*logN)
+        // for (int i = 0; i < arr.length; i++) {
+        //     heapInsert(arr, i);
+        // }
+        
+        // O(N)
+        for (int i = arr.length - 1; i >= 0; i--) {
+            heapify(arr, i, arr.length);
         }
 
         // 步骤2，3：
+        int heapSize = arr.length;
         while(heapSize > 0) {
             // 交换大根堆根节点与最后子节点位置；heapSize-1
             swap(arr, 0, --heapSize);
